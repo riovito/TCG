@@ -27,7 +27,18 @@ class yugiohController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'descricao' => 'required|string|max:255',
+            'tipo' => 'string|max:255',
+            'atributo' => 'string|max:255',
+            'nivel' => 'string|max255',
+            'ataque' => 'string|max255'
+            
+        ]);
+
+        Carta::create($request->all());
+
+        return redirect()->route('yugioh.index')->with('Deu CERTO');
     }
 
     /**

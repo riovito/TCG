@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class magic extends Model
 {
     protected $table = 'magic';
-    protected $fillable = ['nome', 'descricao'];
+    protected $fillable = ['descricao', 'mana', 'poder', 'set'];
 }
