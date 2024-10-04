@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class yugioh extends Model
 {
     protected $table = 'yugioh';
-    protected $fillable = ['nome', 'descricao'];
+    protected $fillable = ['descricao', 'tipo', 'atributo', 'nivel', 'ataque'];
 }
