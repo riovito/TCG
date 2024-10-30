@@ -44,32 +44,46 @@ class cartaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+ /*        $carta = Carta::findOrFail($id);
+        return view('carta.show', compact('carta')); */
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $carta = Carta::findOrFail($id);
+        return view('carta.edit', compact('carta'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $carta = Carta::findOrFail($id);
+
+        $carta->nome = $request->input('nome');
+        $carta->nome = $request->input('valor');
+        $carta->nome = $request->input('PSA');
+        $carta->nome = $request->input('raridade');
+
+        $carta->save();
+
+        return redirect()->route('carta.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $carta = Carta::findOrFail($id);
+
+        $carta->delete();
+        return redirect()->route('carta.index');
     }
 }
