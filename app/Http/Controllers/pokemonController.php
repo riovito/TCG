@@ -27,7 +27,17 @@ class pokemonController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'descricao' => 'required|string|max:255',
+            'tipo' => 'string|max:255',
+            'HP' => 'string|max:255',
+            'fraqueza' => 'string|max255',
+            'resistencia' => 'string|max:255',
+        ]);
+
+        Carta::create($request->all());
+
+        return redirect()->route('pokemon.index')->with('Deu CERTO');
     }
 
     /**

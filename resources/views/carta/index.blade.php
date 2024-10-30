@@ -1,7 +1,6 @@
 <x-app-layout>
     <h1 style="color: white">Carta INDEX</h1>
-<<<<<<< Updated upstream
-=======
+
     <a href="carta/create"><button type="button" class="btn btn-outline-secondary btn-lg px-4 gap-3 text-white">CREATE</button></a>
     <a href="carta/edit"><button type="button" class="btn btn-outline-secondary btn-lg px-4 gap-3 text-white">UPDATE</button></a>
     <table class="table">
@@ -37,5 +36,5 @@
             @endforeach
         </tbody>
     </table>
->>>>>>> Stashed changes
+    <a href="carta/create"><button type="button" class="btn btn-outline-secondary btn-lg px-4 gap-3 text-white">CREATE</button></a>
 </x-app-layout>

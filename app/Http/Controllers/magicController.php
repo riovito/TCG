@@ -11,7 +11,8 @@ class magicController extends Controller
      */
     public function index()
     {
-        //
+        $magic = Magic::all();
+        return view('magic.index', compact('magic'));
     }
 
     /**
@@ -27,7 +28,17 @@ class magicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'descricao' => 'required|string|max:255',
+            'tipo' => 'string|max:255',
+            'atributo' => 'string|max:255',
+            'nivel' => 'string|max255',
+            'ataque' => 'string|max255'
+        ]);
+
+        Carta::create($request->all());
+
+        return redirect()->route('magic.index')->with('Deu CERTO');
     }
 
     /**

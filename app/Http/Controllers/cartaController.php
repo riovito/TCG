@@ -29,7 +29,19 @@ class cartaController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $carta = new Carta([
+            'nome' => $request->input('nome'),
+            'valor' => $request->input('valor'),
+            'PSA' => $request->input('PSA'),
+            'raridade' => $request->input('raridade')
+
+        ]);
+
+        $carta->save();
+
+        return redirect()->route('carta.index');
+
+/*         $request->validate([
             'nome' => 'required|string|max:255',
             'valor' => 'decimal|max:10',
             'PSA' => 'string|max:255',
@@ -38,7 +50,8 @@ class cartaController extends Controller
 
         Carta::create($request->all());
 
-        return redirect()->route('carta.index')->with('Deu CERTO');
+        return redirect()->route('carta.index')->with('Deu CERTO'); */
+
     }
 
     /**

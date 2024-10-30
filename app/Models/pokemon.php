@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class pokemon extends Model
 {
     protected $table = 'pokemon';
-    protected $fillable = ['nome', 'descricao'];
+    protected $fillable = ['descricao', 'tipo', 'HP', 'fraqueza', 'resistencia'];
 }
