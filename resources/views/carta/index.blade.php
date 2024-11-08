@@ -1,6 +1,9 @@
 <x-app-layout>
     <h1 style="color: white">Carta INDEX</h1>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     <a href="carta/create"><button type="button" class="btn btn-outline-secondary btn-lg px-4 gap-3 text-white">CREATE</button></a>
     <a href="carta/edit"><button type="button" class="btn btn-outline-secondary btn-lg px-4 gap-3 text-white">UPDATE</button></a>
     <table class="table">
@@ -11,6 +14,7 @@
                 <th>Valor</th>
                 <th>PSA</th>
                 <th>Raridade</th>
+                <th></th>
             </tr>
 
         </thead>
@@ -24,8 +28,8 @@
                     <td id="PSA">{{ $carta->PSA }}</td>
                     <td id="raridade">{{ $carta->raridade }}</td>
                     <td>
-<!--                         <a href="{{ route('cartas.show', $carta->id) }}" class="btn btn-info">Detalhes</a> -->
-                        <a href="{{ route('cartas.edit', $carta->id) }}" class="btn btn-warning">Editar</a>
+<!--                         <a href="{{ route('carta.show', $carta->id) }}" class="btn btn-info">Detalhes</a> -->
+                        <a href="{{ route('carta.edit', $carta->id) }}" class="btn btn-warning">Editar</a>
                         <form action="{{ route('carta.destroy', $carta->id) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
@@ -36,5 +40,8 @@
             @endforeach
         </tbody>
     </table>
+<<<<<<< Updated upstream
     <a href="carta/create"><button type="button" class="btn btn-outline-secondary btn-lg px-4 gap-3 text-white">CREATE</button></a>
+=======
+>>>>>>> Stashed changes
 </x-app-layout>

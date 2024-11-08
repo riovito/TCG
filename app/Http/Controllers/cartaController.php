@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\carta;
+use App\Models\Carta;
 
 class cartaController extends Controller
 {
@@ -12,6 +12,7 @@ class cartaController extends Controller
      */
     public function index()
     {
+
         $carta = Carta::all();
         return view('carta.index', compact('carta'));
     }
@@ -34,6 +35,7 @@ class cartaController extends Controller
             'valor' => $request->input('valor'),
             'PSA' => $request->input('PSA'),
             'raridade' => $request->input('raridade')
+<<<<<<< Updated upstream
 
         ]);
 
@@ -46,12 +48,18 @@ class cartaController extends Controller
             'valor' => 'decimal|max:10',
             'PSA' => 'string|max:255',
             'raridade' => 'string|max255'
+=======
+>>>>>>> Stashed changes
         ]);
 
-        Carta::create($request->all());
+        $carta->save();
 
+<<<<<<< Updated upstream
         return redirect()->route('carta.index')->with('Deu CERTO'); */
 
+=======
+        return redirect()->route('carta.index');
+>>>>>>> Stashed changes
     }
 
     /**
@@ -94,7 +102,7 @@ class cartaController extends Controller
      */
     public function destroy($id)
     {
-        $carta = Carta::findOrFail($id);
+        $carta = carta::findOrFail($id);
 
         $carta->delete();
         return redirect()->route('carta.index');

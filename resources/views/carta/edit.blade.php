@@ -29,7 +29,7 @@
 
                 <div class="form-actions">
                     <button type="submit" class="btn-primary">Salvar</button>
-                    <a href="{{ route(cartas.index') }}" class="btn-secondary">Cancelar</a>
+                    <a href="{{ route(carta.index') }}" class="btn-secondary">Cancelar</a>
                 </div>
         
             </form> 
