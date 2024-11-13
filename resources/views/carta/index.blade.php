@@ -1,7 +1,7 @@
 <x-app-layout>
     <h1 style="color: white">Carta INDEX</h1>
 
-    <table class="table">
+    <table class="table table-striped-columns table-dark table-bordered border-gray">
         <thead>
             <tr>
                 <th>ID</th>
@@ -13,6 +13,7 @@
             </tr>
 
         </thead>
+        
 
         <tbody>
             @foreach ($carta as $carta)
