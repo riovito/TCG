@@ -35,7 +35,6 @@ class cartaController extends Controller
             'valor' => $request->input('valor'),
             'PSA' => $request->input('PSA'),
             'raridade' => $request->input('raridade')
-<<<<<<< Updated upstream
 
         ]);
 
@@ -48,18 +47,15 @@ class cartaController extends Controller
             'valor' => 'decimal|max:10',
             'PSA' => 'string|max:255',
             'raridade' => 'string|max255'
-=======
->>>>>>> Stashed changes
+
         ]);
 
         $carta->save();
 
-<<<<<<< Updated upstream
         return redirect()->route('carta.index')->with('Deu CERTO'); */
 
-=======
+
         return redirect()->route('carta.index');
->>>>>>> Stashed changes
     }
 
     /**
@@ -88,9 +84,9 @@ class cartaController extends Controller
         $carta = Carta::findOrFail($id);
 
         $carta->nome = $request->input('nome');
-        $carta->nome = $request->input('valor');
-        $carta->nome = $request->input('PSA');
-        $carta->nome = $request->input('raridade');
+        $carta->valor = $request->input('valor');
+        $carta->PSA = $request->input('PSA');
+        $carta->raridade = $request->input('raridade');
 
         $carta->save();
 
