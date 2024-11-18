@@ -9,6 +9,7 @@
                 <th>Valor</th>
                 <th>PSA</th>
                 <th>Raridade</th>
+                <th>Tipo</th>
                 <th></th>
             </tr>
 
@@ -23,8 +24,9 @@
                     <td id="valor">{{ $carta->valor }}</td>
                     <td id="PSA">{{ $carta->PSA }}</td>
                     <td id="raridade">{{ $carta->raridade }}</td>
+                    <td id="tipo">{{ $carta->tipo }}</td>
                     <td>
-<!--                         <a href="{{ route('carta.show', $carta->id) }}" class="btn btn-info">Detalhes</a> -->
+                         <a href="{{ route('carta.show', $carta->id) }}" class="btn btn-info">Detalhes</a>
                         <a href="{{ route('carta.edit', $carta->id) }}" class="btn btn-warning">Editar</a>
                         <form action="{{ route('carta.destroy', $carta->id) }}" method="POST" style="display: inline;">
                             @csrf
