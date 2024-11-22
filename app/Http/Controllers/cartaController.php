@@ -55,6 +55,8 @@ class cartaController extends Controller
 
         session(['carta_basica' => $carta->id]);
 
+        return view('carta.type', ['tipo' => $carta->tipo]);
+
         return redirect()->route('carta.type')->with('tipo', $request->input('tipo'));
     }
 

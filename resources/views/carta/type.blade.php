@@ -5,26 +5,31 @@
         <form action="{{ route('carta.store.type') }}" method="POST">
             @csrf
             
+            <h3 class="text-light">Tipo da Carta: {{ ucfirst($tipo) }}</h3>
+
 
             <!-- Campos por tipo -->
-            <div id="pokemonFields" style="display: none;">
-                <div class="mb-3">
-                    <label for="descricao" class="form-label text-light">Descrição</label>
-                    <input type="text" name="descricao" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label for="hp" class="form-label text-light">HP</label>
-                    <input type="number" name="hp" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label for="fraqueza" class="form-label text-light">Fraqueza</label>
-                    <input type="text" name="fraqueza" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label for="resistencia" class="form-label text-light">Resistência</label>
-                    <input type="text" name="resistencia" class="form-control">
-                </div>
-            </div>
+            @if ($tipo === 'pokemon')
+                    <div id="pokemonFields" style="display: none;">
+                        <div class="mb-3">
+                            <label for="descricao" class="form-label text-light">Descrição</label>
+                            <input type="text" name="descricao" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="hp" class="form-label text-light">HP</label>
+                            <input type="number" name="hp" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="fraqueza" class="form-label text-light">Fraqueza</label>
+                            <input type="text" name="fraqueza" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="resistencia" class="form-label text-light">Resistência</label>
+                            <input type="text" name="resistencia" class="form-control">
+                        </div>
+                    </div>
+               
+            @endif
 
             <div id="magicFields" style="display: none;">
                 <div class="mb-3">

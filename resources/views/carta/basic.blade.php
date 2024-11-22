@@ -38,6 +38,9 @@
                 </select>
             </div>
 
+            <input type="hidden" name="tipoSelecionado" id="tipoSelecionado">
+
+
 
             <button type="submit" class="btn btn-primary">Próximo</button>
             <a href="{{ route('carta.index') }}" class="btn btn-secondary">Cancelar</a>
