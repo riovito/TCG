@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('carta', function (Blueprint $table) {
-            $table->id('id');
+        Schema::create('tipos', function (Blueprint $table) {
+            $table->id();
             $table->string('nome');
-            $table->decimal('valor');
-            $table->string('PSA');
-            $table->string('raridade');
+            $table->string('fraqueza');
+            $table->string('resistencia');
+            $table->string('cor');
+            $table->string('efetivo');
             $table->timestamps();
         });
+
     }
 
     /**
@@ -26,6 +28,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('carta');
+        Schema::dropIfExists('tipos');
+
     }
 };
