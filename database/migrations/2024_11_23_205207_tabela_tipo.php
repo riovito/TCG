@@ -11,18 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pokemon', function (Blueprint $table) {
+        Schema::create('tipos', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('carta_id')->constrained('carta')->onDelete('cascade');
-            $table->string('descricao');
-            $table->string('tipo');
-            $table->string('HP');
+            $table->string('nome');
             $table->string('fraqueza');
             $table->string('resistencia');
+            $table->string('cor');
+            $table->string('efetivo');
             $table->timestamps();
-
-            $table->foreign('carta_id')->references('id')->on('carta');
         });
+
     }
 
     /**
@@ -30,6 +28,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pokemon');
+        Schema::dropIfExists('tipos');
+
     }
 };
