@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pokemon', function (Blueprint $table) {
-            $table->id('carta_id');
+        Schema::create('ataques', function (Blueprint $table) {
+            $table->id();
+            $table->string('nome');
+            $table->string('tipo');  //normal, habilidade
             $table->string('descricao');
-            $table->string('tipo');
-            $table->string('HP');
-            $table->string('fraqueza');
-            $table->string('resistencia');
+            $table->string('energia');
+            $table->string('dano');
             $table->timestamps();
-
-            $table->foreign('carta_id')->references('id')->on('carta');
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pokemon');
+        Schema::dropIfExists('ataques');
     }
 };

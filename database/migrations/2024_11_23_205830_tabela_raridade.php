@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('yugioh', function (Blueprint $table) {
-            $table->id('carta_id');
+        Schema::create('raridades', function (Blueprint $table) {
+            $table->id();
+            $table->string('nome');
+            $table->string('chance');
             $table->string('descricao');
-            $table->string('tipo');
-            $table->string('atributo');
-            $table->string('nivel');
-            $table->string('ataque');
+            $table->string('exclusividade');
+            $table->string('estrelas');
             $table->timestamps();
-
-            $table->foreign('carta_id')->references('id')->on('carta');
         });
     }
 
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('yugioh');
+        Schema::dropIfExists('raridades');
     }
 };
