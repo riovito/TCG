@@ -14,7 +14,7 @@ class cartaController extends Controller
      */
     public function index()
     {
-        $cartas = Carta::with(['tipo', 'raridade'])->get();
+        $cartas = Carta::with(['tipo', 'raridade', 'ataque'])->get();
         return view('cartas.index', compact('cartas'));
     }
 
@@ -25,8 +25,9 @@ class cartaController extends Controller
     {
         $tipos = Tipo::all(); 
         $raridades = Raridade::all();
+        $ataques = Ataque::all();
     
-        return view('cartas.create', compact('tipos', 'raridades'));
+        return view('cartas.create', compact('tipos', 'raridades', 'ataques'));
     }
 
     /**
@@ -34,10 +35,12 @@ class cartaController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request->all());
+        
         $request->validate([
             'nome' => 'required|string',
-            'ataque1' => 'required|string',
-            'ataque2' => 'required|string',
+            'ataque1' => 'required|string|exists:ataques,id',
+            'ataque2' => 'required|string|exists:ataques,id',
             'hp' => 'required|string',
             'preco' => 'required|string',
             'tipo' => 'required|exists:tipos,id',
@@ -54,7 +57,7 @@ class cartaController extends Controller
      */
     public function show(string $id)
     {
-        $carta = Carta::with(['tipo', 'raridade'])->findOrFail($id);
+        $carta = Carta::with(['tipo', 'raridade', 'ataque'])->findOrFail($id);
         return view('cartas.show', compact('carta'));
     }
 
@@ -66,8 +69,9 @@ class cartaController extends Controller
         $carta = Carta::findOrFail($id);
         $tipo = Tipo::all();
         $raridade = Raridade::all();
+        $ataque = Ataque::all();
     
-        return view('cartas.edit', compact('carta', 'tipos', 'raridades'));
+        return view('cartas.edit', compact('carta', 'tipos', 'raridades', 'ataques'));
     }
 
     /**

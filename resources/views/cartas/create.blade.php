@@ -1,3 +1,4 @@
+
 <x-app-layout>
     <h1 class="display-2 ml-3" style="color: white;">Adicionar Carta</h1>
 
@@ -5,54 +6,69 @@
 
     <div class='container'>
 
-        <form action="{{ route('carta.store.basic') }}" method="POST">
+        <form action="{{ route('cartas.store') }}" method="POST">
             @csrf
             
             <div class="mb-3">
-                <label for="" class="form-label text-light">Nome</label>
-                <input type="text" name="nome" class="form-control" id="nome_carta" required>
+                <label for="" class="form-label text-light">Nome:</label>
+                <input type="text" name="nome" class="form-control" id="nome_cartas" required>
             </div>
 
-            <div class="mb-3">
-                <label for="" class="form-label text-light">Valor (Reais)</label>
-                <input type="number" name="valor" class="form-control" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="" class="form-label text-light">PSA</label>
-                <input type="number" name="PSA" class="form-control">
-            </div>
-
-            <div class="mb-3">
-                <label for="" class="form-label text-light">Raridade</label>
-                <input type="text" name="raridade" class="form-control">
-            </div>
-
-            <div class="mb-3">
-                <label for="tipo" class="form-label text-light">Tipo</label>
-                <select name="tipo" class="form-control" required>
-                    <option value="">Selecione o tipo</option>
-                    <option value="pokemon">Pokemon</option>
-                    <option value="magic">Magic</option>
-                    <option value="yugioh">YuGiOh</option>
+            <div class="form-group">
+                <label for="ataque1">Ataque1:</label>
+                <select name="ataque1" required>
+                    <option value="" disabled selected>Selecione um Ataque</option>
+                    @foreach($ataques as $ataque)
+                        <option value="{{ $ataque->id }}">{{ $ataque->nome }}</option>
+                    @endforeach
                 </select>
             </div>
 
-            <input type="hidden" name="tipoSelecionado" id="tipoSelecionado">
 
+            <div class="form-group">
+                <label for="ataque2">Ataque2:</label>
+                <select name="ataque2" required>
+                    <option value="" disabled selected>Selecione um Ataque</option>
+                    @foreach($ataques as $ataque)
+                        <option value="{{ $ataque->id }}">{{ $ataque->nome }}</option>
+                    @endforeach
+                </select>
+            </div>
 
+            <div class="mb-3">
+                <label for="" class="form-label text-light">HP:</label>
+                <input type="text" name="hp" class="form-control" id="hp_cartas" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label text-light">Preco:</label>
+                <input type="text" name="preco" class="form-control" id="preco_cartas" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tipo">Tipo:</label>
+                <select name="tipo" required>
+                    <option value="" disabled selected>Selecione um Tipo</option>
+                    @foreach($tipos as $tipo)
+                        <option value="{{ $tipo->id }}">{{ $tipo->nome }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="raridade">Raridade:</label>
+                <select name="raridade" required>
+                    <option value="" disabled selected>Selecione uma Raridade</option>
+                    @foreach($raridades as $raridade)
+                        <option value="{{ $raridade->id }}">{{ $raridade->nome }}</option>
+                    @endforeach
+                </select>
+            </div>
+            
 
             <button type="submit" class="btn btn-primary">Próximo</button>
-            <a href="{{ route('carta.index') }}" class="btn btn-secondary">Cancelar</a>
+            <a href="{{ route('cartas.index') }}" class="btn btn-secondary">Cancelar</a>
         </form>
     </div>
 
-    <script>
-        document.querySelector('select[name="tipo"]').addEventListener('change', function() {
-            var tipo = this.value;
-            document.getElementById('pokemonFields').style.display = tipo === 'pokemon' ? 'block' : 'none';
-            document.getElementById('magicFields').style.display = tipo === 'magic' ? 'block' : 'none';
-            document.getElementById('yugiohFields').style.display = tipo === 'yugioh' ? 'block' : 'none';
-        });
-    </script>
 </x-app-layout>
