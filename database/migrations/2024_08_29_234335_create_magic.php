@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('magic', function (Blueprint $table) {
-            $table->id('carta_id');
+            $table->id();
+            $table->unsignedBigInteger('carta_id')->constrained('carta')->onDelete('cascade');
             $table->string('descricao');
             $table->string('mana');
             $table->string('poder');
@@ -22,6 +23,20 @@ return new class extends Migration
             $table->foreign('carta_id')->references('id')->on('carta');
         });
     }
+
+/*     Schema::create('livros', function (Blueprint $table) {
+        $table->id();
+        $table->string('titulo');
+        $table->text('resumo');
+        $table->unsignedBigInteger('autor_id');
+        $table->unsignedBigInteger('genero_id');
+        $table->date('data_publicacao')->nullable();
+        $table->string('ISBN')->nullable();
+        $table->timestamps();
+
+        $table->foreign('autor_id')->references('id')->on('autores');
+        $table->foreign('genero_id')->references('id')->on('generos');
+    }); */
 
     /**
      * Reverse the migrations.

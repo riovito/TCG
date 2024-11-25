@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('yugioh', function (Blueprint $table) {
-            $table->id('carta_id');
+            $table->id();
+            $table->unsignedBigInteger('carta_id')->constrained('carta')->onDelete('cascade');
             $table->string('descricao');
             $table->string('tipo');
             $table->string('atributo');

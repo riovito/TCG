@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\carta;
+use App\Models\Carta;
+use App\Models\magic;
+use App\Models\pokemon;
+use App\Models\yugioh;
+
 
 class cartaController extends Controller
 {
@@ -12,6 +16,7 @@ class cartaController extends Controller
      */
     public function index()
     {
+
         $carta = Carta::all();
         return view('carta.index', compact('carta'));
     }
@@ -21,38 +26,85 @@ class cartaController extends Controller
      */
     public function create()
     {
-        return view ('carta.create');
+        return view ('carta.basic');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function storeBasic(Request $request)
     {
-        $carta = new Carta([
-            'nome' => $request->input('nome'),
-            'valor' => $request->input('valor'),
-            'PSA' => $request->input('PSA'),
-            'raridade' => $request->input('raridade')
 
-        ]);
-
-        $carta->save();
-
-        return redirect()->route('carta.index');
-
-/*         $request->validate([
+        $request->validate([
             'nome' => 'required|string|max:255',
-            'valor' => 'decimal|max:10',
-            'PSA' => 'string|max:255',
-            'raridade' => 'string|max255'
+            'valor' => 'required|numeric',
+            'PSA' => 'nullable|string|max:10',
+            'raridade' => 'required|string|max:50',
+            'tipo' => 'required|string|max:50',
         ]);
+        
 
-        Carta::create($request->all());
+        // Criação da carta
+        $carta = new Carta();
+        $carta->nome = $request->input('nome');
+        $carta->valor = $request->input('valor');
+        $carta->PSA = $request->input('PSA');
+        $carta->raridade = $request->input('raridade');
+        $carta->tipo = $request->input('tipo');
+        $carta->save();  // Salva a carta na tabela "carta"
 
-        return redirect()->route('carta.index')->with('Deu CERTO'); */
+        session(['carta_basica' => $carta->id]);
 
+        return view('carta.type', ['tipo' => $carta->tipo]);
+
+        return redirect()->route('carta.type')->with('tipo', $request->input('tipo'));
     }
+
+
+public function storeType(Request $request)
+{
+    $carta = Carta::find(session('carta_basica'));
+
+    if (!$carta) {
+        return redirect()->route('carta.index')->with('error', 'Carta não encontrada!');
+    }
+
+    // Validate the type-specific fields
+    $request->validate([
+        'tipo' => 'required|string',
+    ]);
+
+    // Process type-specific data based on the selected type
+    if ($request->tipo === 'pokemon') {
+        // For Pokémon-specific data
+        $carta->descricao = $request->input('descricao');
+        $carta->hp = $request->input('hp');
+        $carta->fraqueza = $request->input('fraqueza');
+        $carta->resistencia = $request->input('resistencia');
+    } elseif ($request->tipo === 'magic') {
+        // For Magic-specific data
+        $carta->descricao = $request->input('descricao');
+        $carta->mana = $request->input('mana');
+        $carta->poder = $request->input('poder');
+        $carta->set = $request->input('set');
+    } elseif ($request->tipo === 'yugioh') {
+        // For Yu-Gi-Oh! specific data
+        $carta->descricao = $request->input('descricao');
+        $carta->atributo = $request->input('atributo');
+        $carta->nivel = $request->input('nivel');
+        $carta->ataque = $request->input('ataque');
+    }
+
+    // Save the type-specific data to the database
+    $carta->tipo = $request->tipo; // Save the card type
+    $carta->save();
+
+    // Redirect to the 'carta.index' or a success page
+    return redirect()->route('carta.index')->with('success', 'Carta criada com sucesso!');
+}
+
+    
+    
 
     /**
      * Display the specified resource.
@@ -80,9 +132,9 @@ class cartaController extends Controller
         $carta = Carta::findOrFail($id);
 
         $carta->nome = $request->input('nome');
-        $carta->nome = $request->input('valor');
-        $carta->nome = $request->input('PSA');
-        $carta->nome = $request->input('raridade');
+        $carta->valor = $request->input('valor');
+        $carta->PSA = $request->input('PSA');
+        $carta->raridade = $request->input('raridade');
 
         $carta->save();
 
@@ -94,9 +146,15 @@ class cartaController extends Controller
      */
     public function destroy($id)
     {
-        $carta = Carta::findOrFail($id);
+        $carta = carta::findOrFail($id);
 
         $carta->delete();
         return redirect()->route('carta.index');
     }
+
+    public function type()
+    {
+        return view('carta.type');
+    }
+
 }

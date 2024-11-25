@@ -8,5 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class pokemon extends Model
 {
     protected $table = 'pokemon';
-    protected $fillable = ['descricao', 'tipo', 'HP', 'fraqueza', 'resistencia'];
+    protected $fillable = ['carta_id', 'descricao', 'tipo', 'HP', 'fraqueza', 'resistencia'];
+
+    public function carta() {
+        return $this->belongsTo(Carta::class);
+    }
+
 }

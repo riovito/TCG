@@ -8,5 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class magic extends Model
 {
     protected $table = 'magic';
-    protected $fillable = ['descricao', 'mana', 'poder', 'set'];
+    protected $fillable = ['carta_id', 'descricao', 'mana', 'poder', 'set'];
+
+    public function carta() {
+        return $this->belongsTo(Carta::class);
+    }
 }
