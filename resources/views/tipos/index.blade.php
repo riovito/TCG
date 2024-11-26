@@ -25,6 +25,15 @@
                     <td id="resistencia">{{ $tipo->resistencia }}</td>
                     <td id="cor">{{ $tipo->cor }}</td>
                     <td id="efetivo">{{ $tipo->efetivo }}</td>
+
+                    <td>
+                            <a href="{{ route('tipos.edit', $tipo->id) }}" class="btn btn-warning">Editar</a>
+                            <form action="{{ route('tipos.destroy', $tipo->id) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Excluir</button>
+                            </form>
+                        </td>
                     
                 </tr>
             @endforeach

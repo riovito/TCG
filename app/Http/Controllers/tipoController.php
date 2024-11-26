@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\carta;
+use App\Models\tipo;
+use App\Models\raridade;
+use App\Models\ataque;
 use Illuminate\Http\Request;
 
 class tipoController extends Controller
@@ -21,7 +24,6 @@ class tipoController extends Controller
     {
         $request->validate([
             'nome' => 'required|string',
-            'descricao' => 'required|string',
             'fraqueza' => 'required|string',
             'resistencia' => 'required|string',
             'cor' => 'required|string',
@@ -52,11 +54,10 @@ class tipoController extends Controller
         $tipo = Tipo::findOrFail($id);
 
         $tipo->nome = $request->input('nome');
-        $tipo->descricao = $request->input('descricao');
-        $tipo->descricao = $request->input('fraqueza');
-        $tipo->descricao = $request->input('resistencia');
-        $tipo->descricao = $request->input('cor');
-        $tipo->descricao = $request->input('efetivo');
+        $tipo->fraqueza = $request->input('fraqueza');
+        $tipo->resistencia = $request->input('resistencia');
+        $tipo->cor = $request->input('cor');
+        $tipo->efetivo = $request->input('efetivo');
 
         $tipo->save();
 
