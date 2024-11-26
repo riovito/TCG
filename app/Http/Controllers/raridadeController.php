@@ -65,7 +65,7 @@ class raridadeController extends Controller
 
     public function destroy($id)
     {
-        $raridade = Tipo::findOrFail($id);
+        $raridade = Raridade::findOrFail($id);
 
         $raridade->delete();
         return redirect()->route('raridades.index');

@@ -12,20 +12,26 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link  href="{{ route('cartas.index') }}">
+                    <x-nav-link  href="{{ route('cartas.index') }} " :active="request()->routeIs('cartas.index')">
                         {{ __('Cartas') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link  href="{{ route('tipos.index') }}">
+                    <x-nav-link  href="{{ route('tipos.index') }}" :active="request()->routeIs('tipos.index')">
                         {{ __('Tipos') }}
                     </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link  href="{{ route('raridades.index') }}">
+                    <x-nav-link  href="{{ route('raridades.index') }}" :active="request()->routeIs('raridades.index')">
                         {{ __('Raridades') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link  href="{{ route('ataques.index') }}" :active="request()->routeIs('ataques.index')">
+                        {{ __('Ataques') }}
                     </x-nav-link>
                 </div>
 
