@@ -19,9 +19,9 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label text-light" for="password">Senha:</label>
-                        <input type="text" id="password" name="password" value="{{ old('password', $user->password) }}" class="form-control">
-                    </div>
+                        <label class="form-label text-light" for="password">Senha (Deixe em branco caso deseje manter a senha anterior):</label>
+                        <input type="password" name="password" id="password" class="form-control">
+                        </div>
 
                     <div class="mb-3 d-flex justify-content-between">
                         <button type="submit" class="btn btn-primary">Salvar</button>

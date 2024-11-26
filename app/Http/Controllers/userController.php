@@ -42,7 +42,6 @@ class userController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        $user->password = Crypt::decryptString($user->password); //DESCRIPTOGRAFAR
         return view('users.edit', compact('user'));
     }
 
@@ -51,7 +50,7 @@ class userController extends Controller
 
         $user = User::findOrFail($id);
 
-        $user->nome = $request->input('nome');
+        $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->password = $request->input('password');
 
