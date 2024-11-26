@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\carta;
+use App\Models\tipo;
+use App\Models\raridade;
+use App\Models\ataque;
 use Illuminate\Http\Request;
 
 class tipoController extends Controller
