@@ -15,12 +15,12 @@
 
                     <div class="mb-3">
                         <label class="form-label text-light" for="valor">Valor (Reais):</label>
-                        <input type="number" id="valor" name="valor" value="{{ old('valor', $carta->valor) }}" class="form-control">
+                        <input type="text" id="valor" name="valor" value="{{ old('valor', $carta->valor) }}" class="form-control">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label text-light" for="PSA">PSA:</label>
-                        <input type="number" id="PSA" name="PSA" value="{{ old('PSA', $carta->PSA) }}" class="form-control">
+                        <input type="text" id="PSA" name="PSA" value="{{ old('PSA', $carta->PSA) }}" class="form-control">
                     </div>
 
                     <div class="mb-3">

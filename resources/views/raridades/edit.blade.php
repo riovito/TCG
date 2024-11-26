@@ -16,12 +16,12 @@
 
                     <div class="mb-3">
                         <label class="form-label text-light" for="chance">Chance:</label>
-                        <input type="number" id="chance" name="chance" value="{{ old('chance', $raridade->chance) }}" class="form-control">
+                        <input type="text" id="chance" name="chance" value="{{ old('chance', $raridade->chance) }}" class="form-control">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label text-light" for="descricao">Descricao:</label>
-                        <input type="number" id="descricao" name="descricao" value="{{ old('descricao', $raridade->descricao) }}" class="form-control">
+                        <input type="text" id="descricao" name="descricao" value="{{ old('descricao', $raridade->descricao) }}" class="form-control">
                     </div>
 
                     <div class="mb-3">

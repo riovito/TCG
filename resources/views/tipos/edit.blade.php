@@ -16,12 +16,12 @@
 
                     <div class="mb-3">
                         <label class="form-label text-light" for="fraqueza">Fraqueza:</label>
-                        <input type="number" id="fraqueza" name="fraqueza" value="{{ old('fraqueza', $tipo->fraqueza) }}" class="form-control">
+                        <input type="text" id="fraqueza" name="fraqueza" value="{{ old('fraqueza', $tipo->fraqueza) }}" class="form-control">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label text-light" for="resistencia">Resistencia:</label>
-                        <input type="number" id="resistencia" name="resistencia" value="{{ old('resistencia', $tipo->resistencia) }}" class="form-control">
+                        <input type="text" id="resistencia" name="resistencia" value="{{ old('resistencia', $tipo->resistencia) }}" class="form-control">
                     </div>
 
                     <div class="mb-3">
