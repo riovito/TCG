@@ -6,68 +6,44 @@
 
     <div class='container'>
 
-        <form action="{{ route('cartas.store') }}" method="POST">
+        <form action="{{ route('tipos.store') }}" method="POST">
             @csrf
             
             <div class="mb-3">
                 <label for="" class="form-label text-light">Nome:</label>
-                <input type="text" name="nome" class="form-control" id="nome_cartas" required>
-            </div>
-
-            <div class="form-group">
-                <label for="ataque1">Ataque1:</label>
-                <select name="ataque1" required>
-                    <option value="" disabled selected>Selecione um Ataque</option>
-                    @foreach($ataques as $ataque)
-                        <option value="{{ $ataque->id }}">{{ $ataque->nome }}</option>
-                    @endforeach
-                </select>
-            </div>
-
-
-            <div class="form-group">
-                <label for="ataque2">Ataque2:</label>
-                <select name="ataque2" required>
-                    <option value="" disabled selected>Selecione um Ataque</option>
-                    @foreach($ataques as $ataque)
-                        <option value="{{ $ataque->id }}">{{ $ataque->nome }}</option>
-                    @endforeach
-                </select>
+                <input type="text" name="nome" class="form-control" required>
             </div>
 
             <div class="mb-3">
-                <label for="" class="form-label text-light">HP:</label>
-                <input type="text" name="hp" class="form-control" id="hp_cartas" required>
-            </div>
-
-            <div class="mb-3">
-                <label for="" class="form-label text-light">Preco:</label>
-                <input type="text" name="preco" class="form-control" id="preco_cartas" required>
-            </div>
-
-            <div class="form-group">
-                <label for="tipo">Tipo:</label>
-                <select name="tipo" required>
-                    <option value="" disabled selected>Selecione um Tipo</option>
-                    @foreach($tipos as $tipo)
-                        <option value="{{ $tipo->id }}">{{ $tipo->nome }}</option>
-                    @endforeach
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="raridade">Raridade:</label>
-                <select name="raridade" required>
-                    <option value="" disabled selected>Selecione uma Raridade</option>
-                    @foreach($raridades as $raridade)
-                        <option value="{{ $raridade->id }}">{{ $raridade->nome }}</option>
-                    @endforeach
-                </select>
+                <label for="" class="form-label text-light">Descricao:</label>
+                <input type="text" name="descricao" class="form-control" required>
             </div>
             
 
+            <div class="mb-3">
+                <label for="" class="form-label text-light">Fraqueza:</label>
+                <input type="text" name="fraqueza" class="form-control" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="" class="form-label text-light">Resistencia:</label>
+                <input type="text" name="resistencia" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label text-light">Cor:</label>
+                <input type="text" name="cor" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="" class="form-label text-light">Efetivo:</label>
+                <input type="text" name="efetivo" class="form-control" required>
+            </div>
+            
+            
+
             <button type="submit" class="btn btn-primary">Próximo</button>
-            <a href="{{ route('cartas.index') }}" class="btn btn-secondary">Cancelar</a>
+            <a href="{{ route('tipos.index') }}" class="btn btn-secondary">Cancelar</a>
         </form>
     </div>
 
