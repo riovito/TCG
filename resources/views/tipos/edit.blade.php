@@ -1,36 +1,42 @@
 <x-app-layout>
-    <h1 class="text-white">Carta EDIT</h1>
+    <h1 class="text-white">Tipo EDIT</h1>
 
     <section class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <form method="POST" action="{{ route('carta.update', $carta->id) }}">
+                <form method="POST" action="{{ route('tipos.update', $tipo->id) }}">
                     @csrf
                     @method('PUT')
 
                     <div class="mb-3">
                         <label class="form-label text-light" for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" value="{{ old('nome', $carta->nome) }}" class="form-control">
+                        <input type="text" id="nome" name="nome" value="{{ old('nome', $tipo->nome) }}" class="form-control">
+                    </div>
+                    
+
+                    <div class="mb-3">
+                        <label class="form-label text-light" for="fraqueza">Fraqueza:</label>
+                        <input type="text" id="fraqueza" name="fraqueza" value="{{ old('fraqueza', $tipo->fraqueza) }}" class="form-control">
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label text-light" for="valor">Valor (Reais):</label>
-                        <input type="number" id="valor" name="valor" value="{{ old('valor', $carta->valor) }}" class="form-control">
+                        <label class="form-label text-light" for="resistencia">Resistencia:</label>
+                        <input type="text" id="resistencia" name="resistencia" value="{{ old('resistencia', $tipo->resistencia) }}" class="form-control">
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label text-light" for="PSA">PSA:</label>
-                        <input type="number" id="PSA" name="PSA" value="{{ old('PSA', $carta->PSA) }}" class="form-control">
+                        <label class="form-label text-light" for="cor">Cor:</label>
+                        <input type="text" id="cor" name="cor" value="{{ old('cor', $tipo->cor) }}" class="form-control">
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label text-light" for="raridade">Raridade:</label>
-                        <input type="text" id="raridade" name="raridade" value="{{ old('raridade', $carta->raridade) }}" class="form-control">
+                        <label class="form-label text-light" for="efetivo">Efetivo:</label>
+                        <input type="text" id="efetivo" name="efetivo" value="{{ old('efetivo', $tipo->efetivo) }}" class="form-control">
                     </div>
 
                     <div class="mb-3 d-flex justify-content-between">
                         <button type="submit" class="btn btn-primary">Salvar</button>
-                        <a href="{{ route('carta.index') }}" class="btn btn-secondary">Cancelar</a>
+                        <a href="{{ route('tipos.index') }}" class="btn btn-secondary">Cancelar</a>
                     </div>
                 </form> 
             </div>
