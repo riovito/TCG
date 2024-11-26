@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\cartaController;
 use App\Http\Controllers\ataqueController;
 use App\Http\Controllers\raridadeController;
+use App\Http\Controllers\userController;
 use App\Http\Controllers\tipoController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,5 +33,7 @@ Route::resource('raridades', raridadeController::class);
 Route::resource('tipos', tipoController::class);
 
 Route::resource('ataques', ataqueController::class);
+
+Route::resource('users', userController::class);
 
 require __DIR__.'/auth.php';
