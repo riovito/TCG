@@ -15,12 +15,6 @@
             </div>
 
             <div class="mb-3">
-                <label for="" class="form-label text-light">Descricao:</label>
-                <input type="text" name="descricao" class="form-control" required>
-            </div>
-            
-
-            <div class="mb-3">
                 <label for="" class="form-label text-light">Fraqueza:</label>
                 <input type="text" name="fraqueza" class="form-control" required>
             </div>
@@ -40,8 +34,6 @@
                 <input type="text" name="efetivo" class="form-control" required>
             </div>
             
-            
-
             <button type="submit" class="btn btn-primary">Próximo</button>
             <a href="{{ route('tipos.index') }}" class="btn btn-secondary">Cancelar</a>
         </form>
