@@ -1,10 +1,10 @@
 <x-app-layout>
-    <h1 class="text-white">Carta EDIT</h1>
+    <h1 class="text-white">Editar Carta </h1>
 
     <section class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <form method="POST" action="{{ route('carta.update', $carta->id) }}">
+                <form method="POST" action="{{ route('cartas.update', $carta->id) }}">
                     @csrf
                     @method('PUT')
 
@@ -15,12 +15,12 @@
 
                     <div class="mb-3">
                         <label class="form-label text-light" for="valor">Valor (Reais):</label>
-                        <input type="number" id="valor" name="valor" value="{{ old('valor', $carta->valor) }}" class="form-control">
+                        <input type="text" id="valor" name="valor" value="{{ old('valor', $carta->valor) }}" class="form-control">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label text-light" for="PSA">PSA:</label>
-                        <input type="number" id="PSA" name="PSA" value="{{ old('PSA', $carta->PSA) }}" class="form-control">
+                        <input type="text" id="PSA" name="PSA" value="{{ old('PSA', $carta->PSA) }}" class="form-control">
                     </div>
 
                     <div class="mb-3">
@@ -30,7 +30,7 @@
 
                     <div class="mb-3 d-flex justify-content-between">
                         <button type="submit" class="btn btn-primary">Salvar</button>
-                        <a href="{{ route('carta.index') }}" class="btn btn-secondary">Cancelar</a>
+                        <a href="{{ route('cartas.index') }}" class="btn btn-secondary">Cancelar</a>
                     </div>
                 </form> 
             </div>

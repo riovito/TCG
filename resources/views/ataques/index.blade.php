@@ -1,5 +1,5 @@
 <x-app-layout>
-    <h1 style="color: white">Ataques INDEX</h1>
+    <h1 style="color: white">Ataques</h1>
 
     <table class="table table-striped-columns table-dark table-bordered border-gray">
         <thead>

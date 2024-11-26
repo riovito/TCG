@@ -1,5 +1,5 @@
 <x-app-layout>
-    <h1 class="text-white">Ataque EDIT</h1>
+    <h1 class="text-white">Editar Ataque "{{ $ataque->nome }}"</h1>
 
     <section class="container mt-4">
         <div class="row justify-content-center">
