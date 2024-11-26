@@ -1,42 +1,31 @@
 <x-app-layout>
-    <h1 class="text-white">Tipo EDIT</h1>
+    <h1 class="text-white">User EDIT</h1>
 
     <section class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <form method="POST" action="{{ route('tipos.update', $tipo->id) }}">
+                <form method="POST" action="{{ route('users.update', $user->id) }}">
                     @csrf
                     @method('PUT')
 
                     <div class="mb-3">
-                        <label class="form-label text-light" for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" value="{{ old('nome', $tipo->nome) }}" class="form-control">
-                    </div>
-                    
-
-                    <div class="mb-3">
-                        <label class="form-label text-light" for="fraqueza">Fraqueza:</label>
-                        <input type="text" id="fraqueza" name="fraqueza" value="{{ old('fraqueza', $tipo->fraqueza) }}" class="form-control">
+                        <label class="form-label text-light" for="name">Nome:</label>
+                        <input type="text" id="name" name="name" value="{{ old('name', $user->name) }}" class="form-control">
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label text-light" for="resistencia">Resistencia:</label>
-                        <input type="text" id="resistencia" name="resistencia" value="{{ old('resistencia', $tipo->resistencia) }}" class="form-control">
+                        <label class="form-label text-light" for="email">Email:</label>
+                        <input type="text" id="email" name="email" value="{{ old('email', $user->email) }}" class="form-control">
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label text-light" for="cor">Cor:</label>
-                        <input type="text" id="cor" name="cor" value="{{ old('cor', $tipo->cor) }}" class="form-control">
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label text-light" for="efetivo">Efetivo:</label>
-                        <input type="text" id="efetivo" name="efetivo" value="{{ old('efetivo', $tipo->efetivo) }}" class="form-control">
+                        <label class="form-label text-light" for="password">Senha:</label>
+                        <input type="text" id="password" name="password" value="{{ old('password', $user->password) }}" class="form-control">
                     </div>
 
                     <div class="mb-3 d-flex justify-content-between">
                         <button type="submit" class="btn btn-primary">Salvar</button>
-                        <a href="{{ route('tipos.index') }}" class="btn btn-secondary">Cancelar</a>
+                        <a href="{{ route('users.index') }}" class="btn btn-secondary">Cancelar</a>
                     </div>
                 </form> 
             </div>
