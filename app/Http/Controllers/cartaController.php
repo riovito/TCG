@@ -11,7 +11,8 @@ class cartaController extends Controller
 {
     public function index()
     {
-        $cartas = Carta::with(['ataque', 'raridade', 'tipo'])->get();
+        
+        $cartas = Carta::with(['raridade', 'tipo'])->get();
         return view('cartas.index', compact('cartas'));
     }
 
