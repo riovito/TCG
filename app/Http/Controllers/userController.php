@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
+
 
 class userController extends Controller
 {
@@ -40,6 +42,7 @@ class userController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
+        $user->password = Crypt::decryptString($user->password); //DESCRIPTOGRAFAR
         return view('users.edit', compact('user'));
     }
 
