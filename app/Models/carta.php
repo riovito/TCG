@@ -31,4 +31,11 @@ class Carta extends Model
     {
         return $this->belongsTo(Raridade::class);
     }
+
+    public function ataque()
+    {
+        return $this->belongsTo(Ataque::class);
+    }
+
+    
 }
