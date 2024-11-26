@@ -9,38 +9,27 @@ use Illuminate\Http\Request;
 
 class cartaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $cartas = Carta::with(['tipo', 'raridade', 'ataque'])->get();
+        $cartas = Carta::with(['ataque', 'raridade', 'tipo'])->get();
         return view('cartas.index', compact('cartas'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        $tipos = Tipo::all(); 
+        $ataques = Ataque::all(); 
         $raridades = Raridade::all();
-        $ataques = Ataque::all();
+        $tipos = Tipo::all();
     
-        return view('cartas.create', compact('tipos', 'raridades', 'ataques'));
+        return view('cartas.create', compact('ataques', 'raridades', 'tipos'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        dd($request->all());
-        
         $request->validate([
             'nome' => 'required|string',
-            'ataque1' => 'required|string|exists:ataques,id',
-            'ataque2' => 'required|string|exists:ataques,id',
+            'ataque1' => 'required|exists:ataques,id',
+            'ataque2' => 'required|exists:ataques,id',
             'hp' => 'required|string',
             'preco' => 'required|string',
             'tipo' => 'required|exists:tipos,id',
@@ -52,37 +41,28 @@ class cartaController extends Controller
         return redirect()->route('cartas.index')->with('success', 'Carta criada com sucesso!');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function show($id)
     {
-        $carta = Carta::with(['tipo', 'raridade', 'ataque'])->findOrFail($id);
+        $carta = Carta::with(['ataque', 'raridade', 'tipo'])->findOrFail($id);
         return view('cartas.show', compact('carta'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function edit($id)
     {
         $carta = Carta::findOrFail($id);
-        $tipo = Tipo::all();
-        $raridade = Raridade::all();
-        $ataque = Ataque::all();
+        $ataques = Ataque::all();
+        $raridades = Raridade::all();
+        $tipos = Tipo::all();
     
-        return view('cartas.edit', compact('carta', 'tipos', 'raridades', 'ataques'));
+        return view('cartas.edit', compact('carta', 'ataques', 'raridades', 'tipos'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'nome' => 'required|string',
-            'ataque1' => 'required|string',
-            'ataque2' => 'required|string',
+            'ataque1' => 'required|exists:ataques,id',
+            'ataque2' => 'required|exists:ataques,id',
             'hp' => 'required|string',
             'preco' => 'required|string',
             'tipo' => 'required|exists:tipos,id',
@@ -95,10 +75,7 @@ class cartaController extends Controller
         return redirect()->route('cartas.index')->with('success', 'Carta atualizada com sucesso!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function destroy($id)
     {
         $carta = Carta::findOrFail($id);
         $carta->delete();
