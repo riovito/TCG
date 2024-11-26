@@ -14,18 +14,57 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label text-light" for="valor">Valor (Reais):</label>
-                        <input type="text" id="valor" name="valor" value="{{ old('valor', $carta->valor) }}" class="form-control">
+                        <label class="form-label" for="ataque1">Ataque1:</label>
+                        <select id="ataque1" name="ataque1" class="form-select" required>
+                            @foreach($ataques as $ataque)
+                                <option value="{{ $ataque->id }}" {{ $carta->ataque1 == $ataque->id ? 'selected' : '' }}>
+                                    {{ $ataque->nome }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label text-light" for="PSA">PSA:</label>
-                        <input type="text" id="PSA" name="PSA" value="{{ old('PSA', $carta->PSA) }}" class="form-control">
+                        <label class="form-label" for="ataque2">Ataque2:</label>
+                        <select id="ataque2" name="ataque2" class="form-select" required>
+                            @foreach($ataques as $ataque)
+                                <option value="{{ $ataque->id }}" {{ $carta->ataque2 == $ataque->id ? 'selected' : '' }}>
+                                    {{ $ataque->nome }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label text-light" for="raridade">Raridade:</label>
-                        <input type="text" id="raridade" name="raridade" value="{{ old('raridade', $carta->raridade) }}" class="form-control">
+                        <label class="form-label text-light" for="hp">HP:</label>
+                        <input type="text" id="hp" name="hp" value="{{ old('hp', $carta->hp) }}" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label text-light" for="preco">Preço:</label>
+                        <input type="text" id="preco" name="preco" value="{{ old('preco', $carta->preco) }}" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="tipo">Tipo:</label>
+                        <select id="tipo" name="tipo" class="form-select" required>
+                            @foreach($tipos as $tipo)
+                                <option value="{{ $tipo->id }}" {{ $carta->tipo == $tipo->id ? 'selected' : '' }}>
+                                    {{ $tipo->nome }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="raridade">Raridade:</label>
+                        <select id="raridade" name="raridade" class="form-select" required>
+                            @foreach($raridades as $raridade)
+                                <option value="{{ $raridade->id }}" {{ $carta->raridade == $raridade->id ? 'selected' : '' }}>
+                                    {{ $raridade->nome }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <div class="mb-3 d-flex justify-content-between">
