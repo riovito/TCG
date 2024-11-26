@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\Models\carta;
-use App\Models\tipo;
 use App\Models\raridade;
 use App\Models\ataque;
 use Illuminate\Http\Request;
@@ -50,7 +49,7 @@ class ataqueController extends Controller
     public function update(Request $request, $id)
     {
 
-        $ataque = Raridade::findOrFail($id);
+        $ataque = Ataque::findOrFail($id);
 
         $ataque->nome = $request->input('nome');
         $ataque->tipo = $request->input('tipo');
