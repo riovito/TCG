@@ -1,6 +1,6 @@
 
 <x-app-layout>
-    <h1 class="display-2 ml-3" style="color: white;">Adicionar Carta</h1>
+    <h1 class="display-2 ml-3" style="color: white;">Adicionar Tipo</h1>
 
     <br>
 
