@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="container">
         <div class="px-4 text-center">
-        <img class="d-block mx-auto" src="{{ asset('img/icon.png') }}" alt="Icone">
+        <img class="d-block mx-auto m-4" src="{{ asset('img/icon.png') }}" alt="Icone">
             <!-- PASTA IMG NO PUBLIC src="{{ asset('img/nomeImg.jpg') }}-->
             <h1 class=" display-2 fw-bold text-danger">Poké-Universe</h1>
             <div class="col-lg-10 mx-auto">
