@@ -1,7 +1,7 @@
 <x-app-layout>
-    <h1 style="color: white">Carta INDEX</h1>
+    <h1 style="color: white">Usuários</h1>
 
-    <table class="table table-striped-columns table-dark table-bordered border-gray">
+    <table class="table table-striped-columns table-dark table-bordered border-gray m-5">
         <thead>
             <tr>
                 <th>ID</th>

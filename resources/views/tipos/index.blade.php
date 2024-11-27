@@ -1,5 +1,5 @@
 <x-app-layout>
-    <h1 style="color: white">Carta INDEX</h1>
+    <h1 style="color: white">Tipos</h1>
 
     <table class="table table-striped-columns table-dark table-bordered border-gray">
         <thead>
@@ -7,9 +7,9 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Fraqueza</th>
-                <th>Resistencia</th>
+                <th>Resistência</th>
                 <th>Cor</th>
-                <th>Efetivo</th>
+                <th>Efetivo Contra</th>
                 <th></th>
             </tr>
 

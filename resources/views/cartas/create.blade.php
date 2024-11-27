@@ -41,7 +41,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="" class="form-label text-light">Preco:</label>
+                <label for="" class="form-label text-light">Preço:</label>
                 <input type="text" name="preco" class="form-control" id="preco_cartas" required>
             </div>
 

@@ -1,5 +1,5 @@
 <x-app-layout>
-    <h1 class="text-white">User EDIT</h1>
+    <h1 class="text-white">Editar Usuário: {{ $user->name }}</h1>
 
     <section class="container mt-4">
         <div class="row justify-content-center">
