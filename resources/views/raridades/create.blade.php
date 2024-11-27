@@ -20,7 +20,7 @@
             </div>
             
             <div class="mb-3">
-                <label for="" class="form-label text-light">Descricao:</label>
+                <label for="" class="form-label text-light">Descrição:</label>
                 <input type="text" name="descricao" class="form-control" required>
             </div>
 

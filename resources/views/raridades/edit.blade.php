@@ -1,5 +1,5 @@
 <x-app-layout>
-    <h1 class="text-white">Raridade EDIT</h1>
+    <h1 class="text-white">Editar Raridade: {{ $raridade->nome }}</h1>
 
     <section class="container mt-4">
         <div class="row justify-content-center">
@@ -20,7 +20,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label text-light" for="descricao">Descricao:</label>
+                        <label class="form-label text-light" for="descricao">Descrição:</label>
                         <input type="text" id="descricao" name="descricao" value="{{ old('descricao', $raridade->descricao) }}" class="form-control">
                     </div>
 

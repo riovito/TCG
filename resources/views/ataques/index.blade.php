@@ -7,7 +7,7 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Tipo</th>
-                <th>Descricao</th>
+                <th>Descrição</th>
                 <th>Energia</th>
                 <th>Dano</th>
                 <th></th>

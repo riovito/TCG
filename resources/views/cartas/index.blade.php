@@ -1,15 +1,15 @@
 <x-app-layout>
-    <h1 style="color: white">Carta INDEX</h1>
+    <h1 style="color: white">Cartas</h1>
 
     <table class="table table-striped-columns table-dark table-bordered border-gray">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Ataque1</th>
-                <th>Ataque2</th>
-                <th>Hp</th>
-                <th>Preco</th>
+                <th>Ataque 1</th>
+                <th>Ataque 2</th>
+                <th>HP</th>
+                <th>Preço</th>
                 <th>Tipo</th>
                 <th>Raridade</th>
                 <th></th>

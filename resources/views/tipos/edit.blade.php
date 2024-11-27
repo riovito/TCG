@@ -1,5 +1,5 @@
 <x-app-layout>
-    <h1 class="text-white">Tipo EDIT</h1>
+    <h1 class="text-white">Editar Tipo: {{ $tipo->nome }}</h1>
 
     <section class="container mt-4">
         <div class="row justify-content-center">
@@ -20,7 +20,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label text-light" for="resistencia">Resistencia:</label>
+                        <label class="form-label text-light" for="resistencia">Resistência:</label>
                         <input type="text" id="resistencia" name="resistencia" value="{{ old('resistencia', $tipo->resistencia) }}" class="form-control">
                     </div>
 
@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label text-light" for="efetivo">Efetivo:</label>
+                        <label class="form-label text-light" for="efetivo">Efetivo Contra:</label>
                         <input type="text" id="efetivo" name="efetivo" value="{{ old('efetivo', $tipo->efetivo) }}" class="form-control">
                     </div>
 

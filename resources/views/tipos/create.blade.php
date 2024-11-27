@@ -20,7 +20,7 @@
             </div>
             
             <div class="mb-3">
-                <label for="" class="form-label text-light">Resistencia:</label>
+                <label for="" class="form-label text-light">Resistência:</label>
                 <input type="text" name="resistencia" class="form-control" required>
             </div>
 
@@ -30,7 +30,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="" class="form-label text-light">Efetivo:</label>
+                <label for="" class="form-label text-light">Efetivo Contra:</label>
                 <input type="text" name="efetivo" class="form-control" required>
             </div>
             
