@@ -1,26 +1,25 @@
 
 <x-app-layout>
-    <h1 class="display-2 ml-3" style="color: white;">Adicionar Usuário</h1>
+    <h1 class="text-danger display-5 m-3">Adicionar Usuário</h1>
 
     <br>
 
-    <div class='container'>
-
+    <div class='container' style="max-width: 800px">
         <form action="{{ route('users.store') }}" method="POST">
             @csrf
             
-            <div class="mb-3">
-                <label for="" class="form-label text-light">Nome:</label>
+            <div class="mb-3 input-group input-group">
+                <span class="input-group-text" id="name">Nome:</span>
                 <input type="text" name="name" class="form-control" required>
             </div>
 
-            <div class="mb-3">
-                <label for="" class="form-label text-light">Email:</label>
+            <div class="mb-3 input-group input-group">
+                <span class="input-group-text" id="email">Email:</span>
                 <input type="text" name="email" class="form-control" required>
             </div>
             
-            <div class="mb-3">
-                <label for="" class="form-label text-light">Senha:</label>
+            <div class="mb-3 input-group input-group">
+                <span class="input-group-text" id="password">Senha:</span>
                 <input type="text" name="password" class="form-control" required>
             </div>
             

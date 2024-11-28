@@ -1,5 +1,5 @@
 <x-app-layout>
-    <h1 class="text-white">Editar Carta: {{ $carta->nome }}</h1>
+    <h1 class="text-danger display-5 m-3">Editar Carta: {{ $carta->nome }}</h1>
 
     <section class="container mt-4">
         <div class="row justify-content-center">
@@ -8,13 +8,13 @@
                     @csrf
                     @method('PUT')
 
-                    <div class="mb-3">
-                        <label class="form-label text-light" for="nome">Nome:</label>
+                    <div class="mb-3 input-group input-group">
+                        <span class="input-group-text" id="nome">Nome:</span>
                         <input type="text" id="nome" name="nome" value="{{ old('nome', $carta->nome) }}" class="form-control">
                     </div>
 
-                    <div class="mb-3">
-                        <label class="form-label" for="ataque1">Ataque 1:</label>
+                    <div class="mb-3 input-group input-group">
+                        <span class="input-group-text" id="ataque1">Ataque 1:</span>
                         <select id="ataque1" name="ataque1" class="form-select" required>
                             @foreach($ataques as $ataque)
                                 <option value="{{ $ataque->id }}" {{ $carta->ataque1 == $ataque->id ? 'selected' : '' }}>
@@ -24,8 +24,8 @@
                         </select>
                     </div>
 
-                    <div class="mb-3">
-                        <label class="form-label" for="ataque2">Ataque 2:</label>
+                    <div class="mb-3 input-group input-group">
+                        <span class="input-group-text" id="ataque2">Ataque 2:</span>
                         <select id="ataque2" name="ataque2" class="form-select" required>
                             @foreach($ataques as $ataque)
                                 <option value="{{ $ataque->id }}" {{ $carta->ataque2 == $ataque->id ? 'selected' : '' }}>
@@ -35,18 +35,18 @@
                         </select>
                     </div>
 
-                    <div class="mb-3">
-                        <label class="form-label text-light" for="hp">HP:</label>
+                    <div class="mb-3 input-group input-group">
+                        <span class="input-group-text" id="hp">HP:</span>
                         <input type="text" id="hp" name="hp" value="{{ old('hp', $carta->hp) }}" class="form-control">
                     </div>
 
-                    <div class="mb-3">
-                        <label class="form-label text-light" for="preco">Preço:</label>
+                    <div class="mb-3 input-group input-group">
+                        <span class="input-group-text" id="preco">Preço:</span>
                         <input type="text" id="preco" name="preco" value="{{ old('preco', $carta->preco) }}" class="form-control">
                     </div>
 
-                    <div class="mb-3">
-                        <label class="form-label" for="tipo">Tipo:</label>
+                    <div class="mb-3 input-group input-group">
+                        <span class="input-group-text" id="tipo">Tipo:</span>
                         <select id="tipo" name="tipo" class="form-select" required>
                             @foreach($tipos as $tipo)
                                 <option value="{{ $tipo->id }}" {{ $carta->tipo == $tipo->id ? 'selected' : '' }}>
@@ -56,10 +56,10 @@
                         </select>
                     </div>
 
-                    <div class="mb-3">
-                        <label class="form-label" for="raridade">Raridade:</label>
+                    <div class="mb-3 input-group input-group">
+                        <span class="input-group-text" id="raridade">Raridade:</span>
                         <select id="raridade" name="raridade" class="form-select" required>
-                            @foreach($raridades as $raridade)
+                           @foreach($raridades as $raridade)
                                 <option value="{{ $raridade->id }}" {{ $carta->raridade == $raridade->id ? 'selected' : '' }}>
                                     {{ $raridade->nome }}
                                 </option>
