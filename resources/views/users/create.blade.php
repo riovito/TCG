@@ -4,8 +4,7 @@
 
     <br>
 
-    <div class='container'>
-
+    <div class='container' style="max-width: 800px">
         <form action="{{ route('users.store') }}" method="POST">
             @csrf
             
