@@ -42,19 +42,19 @@
                     </p>
                     <div class="mb-1">
                         <!-- Social Media Links -->
-                        <a href="https://facebook.com" target="_blank" class="text-white mx-2" aria-label="Facebook">
+                        <a href="https://www.facebook.com/Dresleigb?locale=pt_BR" target="_blank" class="text-white mx-2" aria-label="Facebook">
                             <i class="bi bi-facebook"></i>
                         </a>
-                        <a href="https://twitter.com" target="_blank" class="text-white mx-2" aria-label="Twitter">
+                        <a href="https://x.com/DragoonMhystic" target="_blank" class="text-white mx-2" aria-label="Twitter">
                             <i class="bi bi-twitter"></i>
                         </a>
-                        <a href="https://instagram.com" target="_blank" class="text-white mx-2" aria-label="Instagram">
+                        <a href="https://instagram.com/triovo.idai" target="_blank" class="text-white mx-2" aria-label="Instagram">
                            <i class="bi bi-instagram"></i>
                         </a>
-                        <a href="https://linkedin.com" target="_blank" class="text-white mx-2" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/vitório-augusto-azevedo-betineli-5708a2237/" target="_blank" class="text-white mx-2" aria-label="LinkedIn">
                             <i class="bi bi-linkedin"></i>
                         </a>
-                        <a href="https://youtube.com" target="_blank" class="text-white mx-2" aria-label="YouTube">
+                        <a href="https://youtu.be/PYTPHIEXGzo?si=wWdvzci01xh8h4jO" target="_blank" class="text-white mx-2" aria-label="YouTube">
                             <i class="bi bi-youtube"></i>
                         </a>
                     </div>
