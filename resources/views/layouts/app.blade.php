@@ -35,31 +35,37 @@
                 {{ $slot }}
             </main>
 
-            <footer class="bg-dark text-white fixed-bottom text-center">
-                <div class="container">
-                    <p class="m-1">
-                      &copy; {{ date('Y') }} PokeUniverse. Todos os direitos reservados.
-                    </p>
-                    <div class="mb-1">
-                        <!-- Social Media Links -->
-                        <a href="https://www.facebook.com/Dresleigb?locale=pt_BR" target="_blank" class="text-white mx-2" aria-label="Facebook">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                        <a href="https://x.com/DragoonMhystic" target="_blank" class="text-white mx-2" aria-label="Twitter">
-                            <i class="bi bi-twitter"></i>
-                        </a>
-                        <a href="https://instagram.com/triovo.idai" target="_blank" class="text-white mx-2" aria-label="Instagram">
-                           <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/vitório-augusto-azevedo-betineli-5708a2237/" target="_blank" class="text-white mx-2" aria-label="LinkedIn">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-                        <a href="https://youtu.be/PYTPHIEXGzo?si=wWdvzci01xh8h4jO" target="_blank" class="text-white mx-2" aria-label="YouTube">
-                            <i class="bi bi-youtube"></i>
-                        </a>
+            <footer class="bg-dark text-white fixed-bottom">
+                <div class="container d-flex justify-content-between align-items-center">
+                    <div>
+                        <a href="img/comemoracao.jpg"><img src="{{ asset('img/feito.png') }}" style="width: 30px" alt="Logo"></a>
                     </div>
+
+                    <div class="text-center">
+                        <p class="m-1">&copy; {{ date('Y') }} PokeUniverse. Todos os direitos reservados.</p>
+                        <div>
+                            <a href="https://www.facebook.com/Dresleigb?locale=pt_BR" target="_blank" class="text-white mx-2" aria-label="Facebook">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="https://x.com/DragoonMhystic" target="_blank" class="text-white mx-2" aria-label="Twitter">
+                                <i class="bi bi-twitter"></i>
+                            </a>
+                            <a href="https://instagram.com/triovo.idai" target="_blank" class="text-white mx-2" aria-label="Instagram">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/vitório-augusto-azevedo-betineli-5708a2237/" target="_blank" class="text-white mx-2" aria-label="LinkedIn">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="https://youtu.be/PYTPHIEXGzo?si=wWdvzci01xh8h4jO" target="_blank" class="text-white mx-2" aria-label="YouTube">
+                                <i class="bi bi-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div></div> <!--deixa no meio-->
                 </div>
             </footer>
+
 
         </div>
     </body>
