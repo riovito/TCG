@@ -1,5 +1,5 @@
 <x-app-layout>
-    <h1 class="text-white">Tipo EDIT</h1>
+    <h1 class="text-danger display-5 m-3">Editar Tipo: {{ $tipo->nome }}</h1>
 
     <section class="container mt-4">
         <div class="row justify-content-center">
@@ -8,29 +8,29 @@
                     @csrf
                     @method('PUT')
 
-                    <div class="mb-3">
-                        <label class="form-label text-light" for="nome">Nome:</label>
+                    <div class="mb-3 input-group input-group">
+                        <span class="input-group-text" id="nome">Nome:</span>
                         <input type="text" id="nome" name="nome" value="{{ old('nome', $tipo->nome) }}" class="form-control">
                     </div>
                     
 
-                    <div class="mb-3">
-                        <label class="form-label text-light" for="fraqueza">Fraqueza:</label>
+                    <div class="mb-3 input-group input-group">
+                        <span class="input-group-text" id="fraqueza">Fraqueza:</span>
                         <input type="text" id="fraqueza" name="fraqueza" value="{{ old('fraqueza', $tipo->fraqueza) }}" class="form-control">
                     </div>
 
-                    <div class="mb-3">
-                        <label class="form-label text-light" for="resistencia">Resistencia:</label>
+                    <div class="mb-3 input-group input-group">
+                        <span class="input-group-text" id="resistencia">Resistência:</span>
                         <input type="text" id="resistencia" name="resistencia" value="{{ old('resistencia', $tipo->resistencia) }}" class="form-control">
                     </div>
 
-                    <div class="mb-3">
-                        <label class="form-label text-light" for="cor">Cor:</label>
+                    <div class="mb-3 input-group input-group">
+                    <span class="input-group-text" id="cor">Cor:</span>
                         <input type="text" id="cor" name="cor" value="{{ old('cor', $tipo->cor) }}" class="form-control">
                     </div>
 
-                    <div class="mb-3">
-                        <label class="form-label text-light" for="efetivo">Efetivo:</label>
+                    <div class="mb-3 input-group input-group">
+                        <span class="input-group-text" id="efetivo">Efetivo Contra:</span>
                         <input type="text" id="efetivo" name="efetivo" value="{{ old('efetivo', $tipo->efetivo) }}" class="form-control">
                     </div>
 
