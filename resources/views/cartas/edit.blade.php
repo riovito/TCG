@@ -1,5 +1,5 @@
 <x-app-layout>
-    <h1 class="text-white">Editar Carta </h1>
+    <h1 class="text-white">Editar Carta: {{ $carta->nome }}</h1>
 
     <section class="container mt-4">
         <div class="row justify-content-center">
@@ -14,7 +14,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label" for="ataque1">Ataque1:</label>
+                        <label class="form-label" for="ataque1">Ataque 1:</label>
                         <select id="ataque1" name="ataque1" class="form-select" required>
                             @foreach($ataques as $ataque)
                                 <option value="{{ $ataque->id }}" {{ $carta->ataque1 == $ataque->id ? 'selected' : '' }}>
@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label" for="ataque2">Ataque2:</label>
+                        <label class="form-label" for="ataque2">Ataque 2:</label>
                         <select id="ataque2" name="ataque2" class="form-select" required>
                             @foreach($ataques as $ataque)
                                 <option value="{{ $ataque->id }}" {{ $carta->ataque2 == $ataque->id ? 'selected' : '' }}>

@@ -1,6 +1,6 @@
 
 <x-app-layout>
-    <h1 class="display-2 ml-3" style="color: white;">Adicionar Raridade</h1>
+    <h1 class="text-danger display-5 m-3">Adicionar Raridade</h1>
 
     <br>
 
@@ -9,28 +9,28 @@
         <form action="{{ route('raridades.store') }}" method="POST">
             @csrf
             
-            <div class="mb-3">
-                <label for="" class="form-label text-light">Nome:</label>
+            <div class="mb-3 input-group input-group">
+                <span class="input-group-text" id="nome">Nome:</span>
                 <input type="text" name="nome" class="form-control" required>
             </div>
 
-            <div class="mb-3">
-                <label for="" class="form-label text-light">Chance:</label>
+            <div class="mb-3 input-group input-group">
+                <span class="input-group-text" id="chance">Chance:</span>
                 <input type="text" name="chance" class="form-control" required>
             </div>
             
-            <div class="mb-3">
-                <label for="" class="form-label text-light">Descricao:</label>
+            <div class="mb-3 input-group input-group">
+                <span class="input-group-text" id="descricao">Descrição:</span>
                 <input type="text" name="descricao" class="form-control" required>
             </div>
 
-            <div class="mb-3">
-                <label for="" class="form-label text-light">Exclusividade:</label>
+            <div class="mb-3 input-group input-group">
+                <span class="input-group-text" id="exclusividade">Exclusividade:</span>
                 <input type="text" name="exclusividade" class="form-control" required>
             </div>
 
-            <div class="mb-3">
-                <label for="" class="form-label text-light">Estrelas:</label>
+            <div class="mb-3 input-group input-group">
+                <span class="input-group-text" id="estrelas">Estrelas:</span>
                 <input type="text" name="estrelas" class="form-control" required>
             </div>
             

@@ -1,6 +1,6 @@
 
 <x-app-layout>
-    <h1 class="display-2 ml-3" style="color: white;">Adicionar Ataque</h1>
+    <h1 class="text-danger display-5 m-3">Adicionar Ataque</h1>
 
     <br>
 
@@ -9,28 +9,28 @@
         <form action="{{ route('ataques.store') }}" method="POST">
             @csrf
             
-            <div class="mb-3">
-                <label for="" class="form-label text-light">Nome:</label>
+            <div class="mb-3 input-group input-group">
+                <span class="input-group-text" id="name">Nome:</span>
                 <input type="text" name="nome" class="form-control" required>
             </div>
 
-            <div class="mb-3">
-                <label for="" class="form-label text-light">Tipo:</label>
+            <div class="mb-3 input-group input-group">
+                <span class="input-group-text" id="tipo">Tipo:</span>
                 <input type="text" name="tipo" class="form-control" required>
             </div>
             
-            <div class="mb-3">
-                <label for="" class="form-label text-light">Descricao:</label>
+            <div class="mb-3 input-group input-descricao">
+                <span class="input-group-text" id="name">Descrição:</span>
                 <input type="text" name="descricao" class="form-control" required>
             </div>
 
-            <div class="mb-3">
-                <label for="" class="form-label text-light">Energia:</label>
+            <div class="mb-3 input-group input-group">
+                <span class="input-group-text" id="energia">Energia:</span>
                 <input type="text" name="energia" class="form-control" required>
             </div>
 
-            <div class="mb-3">
-                <label for="" class="form-label text-light">Dano:</label>
+            <div class="mb-3 input-group input-group">
+                <span class="input-group-text" id="dano">Dano:</span>
                 <input type="text" name="dano" class="form-control" required>
             </div>
             
