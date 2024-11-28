@@ -4,7 +4,7 @@
         <table class="table table-striped-columns table-dark table-bordered border-gray m-3">
             <thead>
                 <tr>
-                    <th style="width: 4%">ID</th>
+                    <th style="width: 4%">#</th>
                     <th style="width: 10%">Nome</th>
                     <th style="width: 15%">Fraqueza</th>
                     <th style="width: 25%">Resistência</th>
