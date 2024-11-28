@@ -37,5 +37,5 @@
             </tbody>
         </table>
     </div>
-    <a href="users/create"><button type="button" class="btn btn-outline-secondary btn-lg px-4 gap-3 text-white ml-3 mt-5">CREATE</button></a>
+    <a href="users/create"><button type="button" class="btn btn-outline-secondary btn-lg px-4 gap-3 text-white ml-3 mt-2">CREATE</button></a>
 </x-app-layout>

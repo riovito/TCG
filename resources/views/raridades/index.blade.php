@@ -5,7 +5,7 @@
         <table class="table table-striped-columns table-dark table-bordered border-gray m-3">
             <thead>
                 <tr>
-                    <th style="width: 4%">>ID</th>
+                    <th style="width: 4%">ID</th>
                     <th style="width: 10%">Nome</th>
                     <th style="width: 15%">Chance</th>
                     <th style="width: 25%">Descrição</th>
@@ -17,7 +17,7 @@
             </thead>
             
 
-            <tbody>
+            <tbody class="table-group-divider">
                 @foreach ($raridades as $raridade)
                     <tr>
                         <td class="colunas">{{ $raridade->id }}</td>
@@ -41,5 +41,5 @@
             </tbody>
         </table>
     </div>
-    <a href="raridades/create"><button type="button" class="btn btn-outline-secondary btn-lg px-4 gap-3 text-white">CREATE</button></a>
+    <a href="raridades/create"><button type="button" class="btn btn-outline-secondary btn-lg px-4 gap-3 text-white ml-3 mt-2">CREATE</button></a>
 </x-app-layout>
