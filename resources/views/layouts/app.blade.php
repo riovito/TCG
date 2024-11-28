@@ -37,10 +37,10 @@
 
             <footer class="bg-dark text-white fixed-bottom text-center">
                 <div class="container">
-                    <p class="m-3">
+                    <p class="m-1">
                       &copy; {{ date('Y') }} PokeUniverse. Todos os direitos reservados.
                     </p>
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <!-- Social Media Links -->
                         <a href="https://facebook.com" target="_blank" class="text-white mx-2" aria-label="Facebook">
                             <i class="bi bi-facebook"></i>
